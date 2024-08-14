@@ -1,0 +1,68 @@
+{
+"winning":[
+ {
+  "index": 1,
+  "step": "1중",
+  "problem": "원가가 A원인 상품이 있다. _aaa%의 이익을 붙인다면 얼마인가?",
+  "correctAnswer": "A * [_aaa+100] \/ 100",
+  "wrongAnswer1": "A * _aaa",
+  "wrongAnswer2": "A * _aaa \/ 100",
+  "wrongAnswer3": "#",
+  "wrongAnswer4": "#",
+  "wrongAnswer5": "#",
+  "wrongAnswer6": "#",
+  "img": "#",
+  "aaa": "10,20,30",
+  "bbb": "#",
+  "ccc": "#"
+ },
+ {
+  "index": 2,
+  "step": "1중",
+  "problem": "B원인 건물이 있다. _aaa% 할인하여 판다?",
+  "correctAnswer": "A * [100-_aaa] \/ 100",
+  "wrongAnswer1": "A * _aaa \/ 100",
+  "wrongAnswer2": "A * _aaa",
+  "wrongAnswer3": "#",
+  "wrongAnswer4": "#",
+  "wrongAnswer5": "#",
+  "wrongAnswer6": "#",
+  "img": "#",
+  "aaa": "10,20,30",
+  "bbb": "#",
+  "ccc": "#"
+ },
+ {
+  "index": 3,
+  "step": "빼기",
+  "problem": "_a 에서  _b를 빼면?",
+  "correctAnswer": "_aaa - _bbb",
+  "wrongAnswer1": "[_aaa - _bbb +1]",
+  "wrongAnswer2": "[_aaa + _bbb +1]",
+  "wrongAnswer3": "[_aaa + _bbb +2]",
+  "wrongAnswer4": "[_aaa - _bbb +2]",
+  "wrongAnswer5": "#",
+  "wrongAnswer6": "#",
+  "img": "#",
+  "aaa": "7,8,9",
+  "bbb": "1,2,3",
+  "ccc": "#"
+ },
+ {
+  "index": 4,
+  "step": "빼기",
+  "problem": "_a 에서  _b를 빼면?",
+  "correctAnswer": "_aaa - _bbb",
+  "wrongAnswer1": "[_aaa - _bbb +2]",
+  "wrongAnswer2": "[_aaa + _bbb +2]",
+  "wrongAnswer3": "[_aaa + _bbb +3]",
+  "wrongAnswer4": "[_aaa - _bbb +3]",
+  "wrongAnswer5": "#",
+  "wrongAnswer6": "#",
+  "img": "#",
+  "aaa": "10,20,30",
+  "bbb": "1,2,3",
+  "ccc": "#"
+ }
+]
+}
