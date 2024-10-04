@@ -1,68 +1,232 @@
 {
-"winning":[
+"OXQuiz":[
  {
   "index": 1,
-  "step": "1중",
-  "problem": "원가가 A원인 상품이 있다. _aaa%의 이익을 붙인다면 얼마인가?",
-  "correctAnswer": "A * [_aaa+100] \/ 100",
-  "wrongAnswer1": "A * _aaa",
-  "wrongAnswer2": "A * _aaa \/ 100",
-  "wrongAnswer3": "#",
-  "wrongAnswer4": "#",
-  "wrongAnswer5": "#",
-  "wrongAnswer6": "#",
-  "img": "#",
-  "aaa": "10,20,30",
-  "bbb": "#",
-  "ccc": "#"
+  "type": "정수와 유리수",
+  "question": "0은 자연수에 포함되지 않는다.",
+  "correct_answer": "o"
  },
  {
   "index": 2,
-  "step": "1중",
-  "problem": "B원인 건물이 있다. _aaa% 할인하여 판다?",
-  "correctAnswer": "A * [100-_aaa] \/ 100",
-  "wrongAnswer1": "A * _aaa \/ 100",
-  "wrongAnswer2": "A * _aaa",
-  "wrongAnswer3": "#",
-  "wrongAnswer4": "#",
-  "wrongAnswer5": "#",
-  "wrongAnswer6": "#",
-  "img": "#",
-  "aaa": "10,20,30",
-  "bbb": "#",
-  "ccc": "#"
+  "type": "이차함수",
+  "question": "이차함수 y = -2x^2의 그래프는 위로 볼록하다.\n",
+  "correct_answer": "o"
  },
  {
   "index": 3,
-  "step": "빼기",
-  "problem": "_a 에서  _b를 빼면?",
-  "correctAnswer": "_aaa - _bbb",
-  "wrongAnswer1": "[_aaa - _bbb +1]",
-  "wrongAnswer2": "[_aaa + _bbb +1]",
-  "wrongAnswer3": "[_aaa + _bbb +2]",
-  "wrongAnswer4": "[_aaa - _bbb +2]",
-  "wrongAnswer5": "#",
-  "wrongAnswer6": "#",
-  "img": "#",
-  "aaa": "7,8,9",
-  "bbb": "1,2,3",
-  "ccc": "#"
+  "type": "이차방정식",
+  "question": "이차방정식 x^2 - 8x - 16 = 0은 완전제곱식이다.",
+  "correct_answer": "x"
  },
  {
   "index": 4,
-  "step": "빼기",
-  "problem": "_a 에서  _b를 빼면?",
-  "correctAnswer": "_aaa - _bbb",
-  "wrongAnswer1": "[_aaa - _bbb +2]",
-  "wrongAnswer2": "[_aaa + _bbb +2]",
-  "wrongAnswer3": "[_aaa + _bbb +3]",
-  "wrongAnswer4": "[_aaa - _bbb +3]",
-  "wrongAnswer5": "#",
-  "wrongAnswer6": "#",
-  "img": "#",
-  "aaa": "10,20,30",
-  "bbb": "1,2,3",
-  "ccc": "#"
+  "type": "이차방정식",
+  "question": "이차방정식의 두 근이 중복될 때, 이 근을 중근이라 한다. \n",
+  "correct_answer": "o"
+ },
+ {
+  "index": 5,
+  "type": "제곱근과 실수 ",
+  "question": "제곱근 7과 7의 제곱근은 같다 ",
+  "correct_answer": "x"
+ },
+ {
+  "index": 6,
+  "type": "제곱근과 실수 ",
+  "question": "수직선은 유리수와 무리수만으로 빈틈없이 채울 수 있다 ",
+  "correct_answer": "o"
+ },
+ {
+  "index": 7
+ },
+ {
+  "index": 8
+ },
+ {
+  "index": 9
+ }
+],
+"short_answer":[
+ {
+  "index": 1,
+  "type": "정수와 유리수",
+  "question": "0을 포함하여 1씩 커지거나 작아지는 수",
+  "correct_answer": "정수"
+ },
+ {
+  "index": 2,
+  "type": "이차함수",
+  "question": "y = 2(x+1)^2 + 3의 그래프를 x축 방향으로  a만큼, y축 방향으로 b만큼 평행이동하면 y=2x^2이 된다고 한다. 이 때, a+b의 값을 구하시오. \n",
+  "correct_answer": -2
+ },
+ {
+  "index": 3,
+  "type": "실수와 그 계산",
+  "question": "루트 (20 마이너스 x) 가 정수이다. 자연수 x의 개수는? ",
+  "correct_answer": 5
+ },
+ {
+  "index": 4,
+  "type": "실수와 그 계산",
+  "question": "-5의 전체 제곱의 음의 제곱근은? ",
+  "correct_answer": -5
+ },
+ {
+  "index": 5,
+  "type": "인수분해 ",
+  "question": "합이 -4, 곱이 3인 두 정수는? ",
+  "correct_answer": "-3,-1"
+ },
+ {
+  "index": 6
+ },
+ {
+  "index": 7
+ },
+ {
+  "index": 8
+ },
+ {
+  "index": 9
+ }
+],
+"select_one":[
+ {
+  "index": 1,
+  "type": "이차방정식",
+  "question": "계수가 유리수인 이차방정식의 한 근이 1 + 루트 7일때, 다른 한 근은?",
+  "correct_answer": "1 - 루트7\n",
+  "wrong_answer1": "1 + 루트7",
+  "wrong_answer2": "-1 +루트 7",
+  "wrong_answer3": 7,
+  "wrong_answer4": "-1 - 루트7"
+ },
+ {
+  "index": 2,
+  "type": "이차방정식",
+  "question": "ax^2 + bx + c = 0의 꼴의 이차방정식이 7x^2 - 3x + 8 = 0과 같을 때, a - b + c 는?\n",
+  "correct_answer": 18,
+  "wrong_answer1": 12,
+  "wrong_answer2": 2,
+  "wrong_answer3": 4,
+  "wrong_answer4": 5
+ },
+ {
+  "index": 3,
+  "type": "이차방정식",
+  "question": "이차방정식 7x^2 - 14x + 21 = 0의 두근의 합은?\n",
+  "correct_answer": 2,
+  "wrong_answer1": "-2",
+  "wrong_answer2": 3,
+  "wrong_answer3": "-3",
+  "wrong_answer4": 7
+ },
+ {
+  "index": 4,
+  "type": "실수와 그 계산",
+  "question": "(루트 5) 플러스 2의 정수부분은? ",
+  "correct_answer": 4,
+  "wrong_answer1": 1,
+  "wrong_answer2": 2,
+  "wrong_answer3": 3,
+  "wrong_answer4": 5
+ },
+ {
+  "index": 5,
+  "type": "실수와 그 계산",
+  "question": "(루트 81)의 음의 제곱근을 a, 16의 양의 제곱근을 b라고 할 때, a+b의 값은? ",
+  "correct_answer": 1,
+  "wrong_answer1": -2,
+  "wrong_answer2": -1,
+  "wrong_answer3": 0,
+  "wrong_answer4": 2
+ },
+ {
+  "index": 6,
+  "type": "인수분해 ",
+  "question": "(x+2)(x-6)+k가 완전제곱식을 이룬다. k의 값은? ",
+  "correct_answer": 16,
+  "wrong_answer1": 12,
+  "wrong_answer2": 15,
+  "wrong_answer3": 18,
+  "wrong_answer4": 20
+ },
+ {
+  "index": 7,
+  "type": "인수분해 ",
+  "question": "(루트 11)의 소수 부분을 x라 할 때, x^2 + 6x +9의 값은? ",
+  "correct_answer": 11,
+  "wrong_answer1": 3,
+  "wrong_answer2": 5,
+  "wrong_answer3": 7,
+  "wrong_answer4": 9
+ },
+ {
+  "index": 8
+ },
+ {
+  "index": 9
+ }
+],
+"select_multiple":[
+ {
+  "index": 1,
+  "type": "이차함수",
+  "question": "이차함수 y = -3(x-2)^2 + 3의 그래프에 대한 다음 설명 중 옳지 않은 것을 모두 골라라. (2개)",
+  "number_of_correct_answers": "3,4",
+  "answer1": "축의 방정식은 x=2이다.",
+  "answer2": "꼭짓점의 좌표는 (2,3)이다.",
+  "answer3": "아래로 볼록한 포물선이다.",
+  "answer4": "y축과의 교점은 (0,9)이다.",
+  "answer5": "제 2사분면을 지나지 않는다."
+ },
+ {
+  "index": 2,
+  "type": "이차방정식",
+  "question": "이차방정식의 두 근이 7만큼 차이가 날 때 한 근이 k일 때, 다른 한 근은? (2개)\n\n",
+  "number_of_correct_answers": "2,3",
+  "answer1": "7k",
+  "answer2": "k + 7",
+  "answer3": "k - 7\n",
+  "answer4": "7k + 7",
+  "answer5": "7k - 7"
+ },
+ {
+  "index": 3,
+  "type": "이차함수",
+  "question": "y가 x에 관한 이차함수인 것을 모두 고른것은?\n",
+  "number_of_correct_answers": "1,4",
+  "answer1": "둘레의 길이가 12cm인 직사각형의 가로의 길이는 x cm이고, 넓이는 y cm^2이다.",
+  "answer2": "한 모서리의 길이가 x cm인 정육면체의 부피는 y cm^3이다.",
+  "answer3": "시속 3km로 걸어서 x시간 동안 간 거리는 y km 이다.",
+  "answer4": "반지름의 길이가 x cm인 원의 넓이는 y cm^2이다.",
+  "answer5": "없음"
+ },
+ {
+  "index": 4,
+  "type": "실수와 그 계산 ",
+  "question": "실수에 대한 설명 중 옳지 않은 것은? ",
+  "number_of_correct_answers": "3,4",
+  "answer1": "순환하지 않는 무한소수는 무리수이다 ",
+  "answer2": "2와 3 사이에는 무수히 많은 무리수가 있다",
+  "answer3": "두 무리수 사이에는 무수히 많은 정수가 있다 ",
+  "answer4": "근호를 사용하여 나타낸 수는 모두 무리수이다 ",
+  "answer5": "모든 순환하는 무한소수는 유리수이다 "
+ },
+ {
+  "index": 5
+ },
+ {
+  "index": 6
+ },
+ {
+  "index": 7
+ },
+ {
+  "index": 8
+ },
+ {
+  "index": 9
  }
 ]
 }

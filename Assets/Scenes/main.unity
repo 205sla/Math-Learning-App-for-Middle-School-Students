@@ -20336,7 +20336,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   buttonIcon: {fileID: 21300000, guid: d58c56a572b8c424b977292054ceb745, type: 3}
-  buttonText: Start
+  buttonText: "\uC2DC\uC791"
   iconScale: 1
   textSize: 24
   autoFitContent: 1
@@ -20420,7 +20420,7 @@ MonoBehaviour:
   renderOnTop: 1
   centered: 0
   isPreset: 1
-  latestTabIndex: 0
+  latestTabIndex: 1
 --- !u!1 &1062716270
 GameObject:
   m_ObjectHideFlags: 0
@@ -32807,8 +32807,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 68.17, y: -27.5}
-  m_SizeDelta: {x: 136.34, y: 55}
+  m_AnchoredPosition: {x: 63.045, y: -27.5}
+  m_SizeDelta: {x: 126.09, y: 55}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1661615842
 MonoBehaviour:
@@ -33251,8 +33251,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 88.17, y: -27.5}
-  m_SizeDelta: {x: 56.34, y: 45}
+  m_AnchoredPosition: {x: 83.045, y: -27.5}
+  m_SizeDelta: {x: 46.09, y: 45}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1671418408
 MonoBehaviour:
@@ -33288,10 +33288,10 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Start
+  m_text: "\uC2DC\uC791"
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 84dd14695854bbc43a5faa24fcf93d0d, type: 2}
-  m_sharedMaterial: {fileID: 21261991626553910, guid: 84dd14695854bbc43a5faa24fcf93d0d, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: ec9c33489f141554f9fad3650c9e700e, type: 2}
+  m_sharedMaterial: {fileID: 3224685284492544709, guid: ec9c33489f141554f9fad3650c9e700e, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -33501,8 +33501,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 88.17, y: -27.5}
-  m_SizeDelta: {x: 56.34, y: 45}
+  m_AnchoredPosition: {x: 83.045, y: -27.5}
+  m_SizeDelta: {x: 46.09, y: 45}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1674653774
 MonoBehaviour:
@@ -33538,10 +33538,10 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Start
+  m_text: "\uC2DC\uC791"
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 84dd14695854bbc43a5faa24fcf93d0d, type: 2}
-  m_sharedMaterial: {fileID: 21261991626553910, guid: 84dd14695854bbc43a5faa24fcf93d0d, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: ec9c33489f141554f9fad3650c9e700e, type: 2}
+  m_sharedMaterial: {fileID: 3224685284492544709, guid: ec9c33489f141554f9fad3650c9e700e, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -38578,8 +38578,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 88.17, y: -27.5}
-  m_SizeDelta: {x: 56.34, y: 45}
+  m_AnchoredPosition: {x: 83.045, y: -27.5}
+  m_SizeDelta: {x: 46.09, y: 45}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1929841570
 MonoBehaviour:
@@ -38615,10 +38615,10 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Start
+  m_text: "\uC2DC\uC791"
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 84dd14695854bbc43a5faa24fcf93d0d, type: 2}
-  m_sharedMaterial: {fileID: 21261991626553910, guid: 84dd14695854bbc43a5faa24fcf93d0d, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: ec9c33489f141554f9fad3650c9e700e, type: 2}
+  m_sharedMaterial: {fileID: 3224685284492544709, guid: ec9c33489f141554f9fad3650c9e700e, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
