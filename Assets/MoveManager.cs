@@ -1,17 +1,14 @@
 using DG.Tweening;
 using Michsky.MUIP;
-using System.Collections;
 using System.Collections.Generic;
-using Unity.VisualScripting;
 using UnityEngine;
-using UnityEngine.Profiling;
-using static mainCodeCs;
 
 public class MoveManager : MonoBehaviour
 {
+
     public string Progress = "";
 
-
+    public GameObject ShowResults;
     public Transform startBut;
     public GameObject[] Buttons;
     public GameObject page;
@@ -36,7 +33,7 @@ public class MoveManager : MonoBehaviour
 
     private void Update()
     {
-        if(Progress == "문제출제시작")
+        if (Progress == "문제출제시작")
         {
             Progress = "문제출제중";
             SetProblem();
@@ -44,11 +41,19 @@ public class MoveManager : MonoBehaviour
     }
     void SeeProblem()
     {
+
+        Progress = "문제출력";
         List<string> p = problemList[problemNum];
-        if (p[4]== "oxQuiz")
+        if (p[4] == "oxQuiz")
         {
             InputFildList[0].gameObject.SetActive(true);
-            InputFildList[0].GetComponent<OXQuizInputSet>().SetProblemTxt(problemNum+"번 문제", p[3]);
+            InputFildList[0].GetComponent<OXQuizInputSet>().SetProblemTxt((problemNum + 1) + "번 문제", p[3]);
+
+        }
+        else if (p[4] == "shortAns")
+        {
+            InputFildList[1].gameObject.SetActive(true);
+            InputFildList[1].GetComponent<short_answerInputSet>().SetProblemTxt((problemNum + 1) + "번 문제", p[3]);
 
         }
         else
@@ -58,30 +63,93 @@ public class MoveManager : MonoBehaviour
             problemNum++;
             SeeProblem();
         }
+
     }
 
     void SetProblem()
     {
-        problemList = GameObject.Find("MainCode").GetComponent<mainCodeCs>().RandRandomQuiz();
+        problemList = GameObject.Find("MainCode").GetComponent<mainCodeCs>().RandRandomQuiz(20);
         problemNum = 0;
-        Progress = "문제 출력";
         SeeProblem();
     }
 
     public void InputAns(string ans)
     {
-        if(Progress== "문제풀기")
+        if (Progress == "문제출력")
         {
             Progress = "채점";
-            Debug.Log(ans);
+            List<string> p = problemList[problemNum];
+            ShowResults.SetActive(true);
+            ShowResults.GetComponent<ModalWindowManager>().titleText = (problemNum + 1) + "번 문제";
+            if (p[4] == "oxQuiz")
+            {
+                Debug.Log("입력은" + ans + "정답은:" + p[5] + "같나요?" + (p[5] == ans));
+                if (p[5] == ans)
+                {
+                    ShowResults.GetComponent<ModalWindowManager>().descriptionText = "정답입니다!"; // Change desc
+
+                }
+                else
+                {
+                    //Debug.Log("입력은" + ans + "정답은:" + p[5] + "같나요?" + p[5] == ans);
+                    ShowResults.GetComponent<ModalWindowManager>().descriptionText = "오답입니다.\n정답은 : " + p[5];
+                }
+
+
+            }
+            else if (p[4] == "shortAns")
+            {
+                string a, b;
+                a = getRemoveWhiteSpaces(p[5].ToString());
+                b = getRemoveWhiteSpaces(ans);
+
+
+
+                if (a==b)
+                {
+                    ShowResults.GetComponent<ModalWindowManager>().descriptionText = "정답입니다!"; // Change desc
+
+                }
+                else
+                {
+                    //Debug.Log("입력은" + ans + "정답은:" + p[5] + "같나요?" + p[5] == ans);
+                    ShowResults.GetComponent<ModalWindowManager>().descriptionText = "오답입니다.\n정답은 : " + p[5];
+                }
+
+
+            }
+
+            ShowResults.GetComponent<ModalWindowManager>().UpdateUI();
+            ShowResults.GetComponent<ModalWindowManager>().Open();
+            // // Update UI
+            // Open window
         }
-        
+
+    }
+
+    public void ConfirmBtnDwn()
+    {//문제 정답 여부 확인 완료 
+
+        if (Progress == "채점")
+        {
+            List<string> p = problemList[problemNum];
+            if (p[4] == "oxQuiz")
+            {
+                InputFildList[0].gameObject.SetActive(false);
+            }
+            else if (p[4] == "shortAns")
+            {
+                InputFildList[1].gameObject.SetActive(false);
+            }
+            problemNum++;
+            SeeProblem();
+        }
     }
 
     public void studyStartBtnDwn(int cos)
     {
         StudyCos = cos;
-        page.transform.DOLocalMove(new Vector3(-1080*2, 0, 0), 1.0f).SetEase(Ease.OutBounce);
+        page.transform.DOLocalMove(new Vector3(-1080 * 2, 0, 0), 1.0f).SetEase(Ease.OutBounce);
         Progress = "문제출제시작";
     }
 
@@ -93,7 +161,7 @@ public class MoveManager : MonoBehaviour
     }
 
 
-    
+
     public void StartButDwn()//타이틀에서 시작버튼 누름
     {
         startBut.transform.DOScale(0, 0.3f).OnComplete(() =>
@@ -109,8 +177,8 @@ public class MoveManager : MonoBehaviour
                 Buttons[2].gameObject.SetActive(true);
             }
         });
-        
-        
+
+
 
     }
 
@@ -136,4 +204,18 @@ public class MoveManager : MonoBehaviour
             ES3.Save("오답학습", 오답학습);
         }
     }
+
+    public static string getRemoveWhiteSpaces(string input)
+    {
+        string text=input;
+        char[] zeroWidthSpaces = { '\u200B', '\u200C', '\u200D' };
+
+        foreach (char zeroWidth in zeroWidthSpaces)
+        {
+            text = text.Replace(zeroWidth.ToString(), "");
+        }
+
+        return text.Replace(" ", "").Replace("\n", "").Replace("\r", "");
+    }
 }
+
