@@ -8,7 +8,7 @@ public class short_answerInputSet : MonoBehaviour
 {
     public TMP_Text problemNumText;
     public GameObject problemStrText;
-    public TMP_Text ansTxt;
+    public TMP_InputField ansTxt;
     public TMP_Text HintText;
 
     public GameObject MainCode;

@@ -29,7 +29,7 @@ namespace Michsky.MUIP
                 this.enabled = false;
             }
         }
-
+       
         void Update()
         {
             if (UIManagerAsset == null) { return; }
@@ -52,7 +52,7 @@ namespace Michsky.MUIP
             {
                 offLabel.color = new Color(UIManagerAsset.toggleTextColor.r, UIManagerAsset.toggleTextColor.g, UIManagerAsset.toggleTextColor.b, offLabel.color.a);
                 offLabel.font = UIManagerAsset.toggleFont;
-            }
+            }//*/
         }
     }
 }

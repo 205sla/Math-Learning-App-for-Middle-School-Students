@@ -96,29 +96,29 @@ public class mainCodeCs : MonoBehaviour
 
 
 
-    public List<List<string>> RandRandomQuiz(int count = 10)
+    public List<List<string>> RandRandomQuiz(int count = 10, int cos=1)
     {
         // Create a list to hold all valid quizzes from all types where semester == 1
         List<List<string>> selectedQuizzes = new List<List<string>>();
 
         // Get all OX quizzes with semester 1
         var oxQuizzes = QuestionList.OXQuiz
-            .Where(q => q.semester == 1)
+            .Where(q => q.semester == cos)
             .ToList();
 
         // Get all short answer quizzes with semester 1
         var shortAnswers = QuestionList.short_answer
-            .Where(q => q.semester == 1)
+            .Where(q => q.semester == cos)
             .ToList();
 
         // Get all select one quizzes with semester 1
         var selectOnes = QuestionList.select_one
-            .Where(q => q.semester == 1)
+            .Where(q => q.semester == cos)
             .ToList();
 
         // Get all select multiple quizzes with semester 1
         var selectMultiples = QuestionList.select_multiple
-            .Where(q => q.semester == 1)
+            .Where(q => q.semester == cos)
             .ToList();
 
         // Combine all quizzes into one list

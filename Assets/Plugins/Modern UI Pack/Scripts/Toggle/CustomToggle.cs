@@ -52,6 +52,7 @@ namespace Michsky.MUIP
 
         public void UpdateState(bool value)
         {
+            Debug.Log(value);
             if (gameObject.activeInHierarchy == true)
             {
                 StopCoroutine("DisableAnimator");
@@ -61,9 +62,9 @@ namespace Michsky.MUIP
             else { return; }
 
             toggleAnimator.enabled = true;
-
+            
             if (toggleObject.isOn) { toggleAnimator.Play("Toggle On"); }
-            else { toggleAnimator.Play("Toggle Off"); }
+            else { toggleAnimator.Play("Toggle Off"); }//*/
         }
 
         IEnumerator DisableAnimator()

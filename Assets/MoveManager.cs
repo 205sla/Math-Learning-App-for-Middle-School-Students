@@ -2,6 +2,7 @@ using DG.Tweening;
 using Michsky.MUIP;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class MoveManager : MonoBehaviour
 {
@@ -17,7 +18,10 @@ public class MoveManager : MonoBehaviour
     bool 개념별학습, 오답학습;
 
     List<List<string>> problemList;
+    List<string[]> wrongP;
     int problemNum;
+
+    public GameObject EndPageSet;
 
     public int StudyCos;
     void Start()
@@ -38,11 +42,24 @@ public class MoveManager : MonoBehaviour
             Progress = "문제출제중";
             SetProblem();
         }
+        if (Progress == "문제 끝")
+        {
+            problemEnd();
+        }
     }
     void SeeProblem()
     {
 
-        Progress = "문제출력";
+        if (problemNum >= 4)//20으로 바꿔야 함
+        {
+            Progress = "문제 끝";
+            return;
+        }
+        else
+        {
+
+            Progress = "문제출력";
+        }
         List<string> p = problemList[problemNum];
         if (p[4] == "oxQuiz")
         {
@@ -56,9 +73,19 @@ public class MoveManager : MonoBehaviour
             InputFildList[1].GetComponent<short_answerInputSet>().SetProblemTxt((problemNum + 1) + "번 문제", p[3]);
 
         }
+        else if (p[4] == "select1")
+        {
+            InputFildList[2].gameObject.SetActive(true);
+            InputFildList[2].GetComponent<select_oneInputSet>().SetProblemTxt((problemNum + 1) + "번 문제", p[3], p[5], p[6], p[7], p[8], p[9]);
+        }
+        else if (p[4] == "selectM")
+        {
+            InputFildList[3].gameObject.SetActive(true);
+            InputFildList[3].GetComponent<select_multipleInputSet>().SetProblemTxt((problemNum + 1) + "번 문제", p[3],  p[6], p[7], p[8], p[9],p[10]);
+        }
         else
         {
-            Debug.Log("일단은 보류여");
+            Debug.Log("뭔가 오류여");
             //임시 코드여
             problemNum++;
             SeeProblem();
@@ -68,8 +95,10 @@ public class MoveManager : MonoBehaviour
 
     void SetProblem()
     {
-        problemList = GameObject.Find("MainCode").GetComponent<mainCodeCs>().RandRandomQuiz(20);
+        problemList = GameObject.Find("MainCode").GetComponent<mainCodeCs>().RandRandomQuiz(20, StudyCos);
         problemNum = 0;
+        wrongP = new List<string[]> {};
+        Debug.Log("비상" + wrongP.Count);
         SeeProblem();
     }
 
@@ -93,6 +122,7 @@ public class MoveManager : MonoBehaviour
                 {
                     //Debug.Log("입력은" + ans + "정답은:" + p[5] + "같나요?" + p[5] == ans);
                     ShowResults.GetComponent<ModalWindowManager>().descriptionText = "오답입니다.\n정답은 : " + p[5];
+                    wrongP.Add(new string[] { p[2], (problemNum + 1).ToString() });
                 }
 
 
@@ -105,7 +135,7 @@ public class MoveManager : MonoBehaviour
 
 
 
-                if (a==b)
+                if (a == b)
                 {
                     ShowResults.GetComponent<ModalWindowManager>().descriptionText = "정답입니다!"; // Change desc
 
@@ -114,10 +144,60 @@ public class MoveManager : MonoBehaviour
                 {
                     //Debug.Log("입력은" + ans + "정답은:" + p[5] + "같나요?" + p[5] == ans);
                     ShowResults.GetComponent<ModalWindowManager>().descriptionText = "오답입니다.\n정답은 : " + p[5];
+                    wrongP.Add(new string[] { p[2], (problemNum + 1).ToString() });
                 }
 
 
             }
+            else if (p[4] == "select1")
+            {
+                string a, b;
+                a = getRemoveWhiteSpaces(p[5].ToString());
+                b = getRemoveWhiteSpaces(ans);
+
+                Debug.Log("입력은" + b + "정답은:" + a + "같나요?" + (a == b));
+
+                if (a == b)
+                {
+                    ShowResults.GetComponent<ModalWindowManager>().descriptionText = "정답입니다!"; // Change desc
+
+                }
+                else
+                {
+                    //Debug.Log("입력은" + ans + "정답은:" + p[5] + "같나요?" + p[5] == ans);
+                    ShowResults.GetComponent<ModalWindowManager>().descriptionText = "오답입니다.\n정답은 : " + p[5];
+                    wrongP.Add(new string[] { p[2], (problemNum + 1).ToString() });
+                }
+
+
+            }
+            else if (p[4] == "selectM")
+            {
+                string a, b;
+                a = getRemoveWhiteSpaces(p[5].ToString());
+                b = getRemoveWhiteSpaces(ans);
+
+                Debug.Log("입력은" + b + "정답은:" + a + "같나요?" + (a == b));
+
+                if (a == b)
+                {
+                    ShowResults.GetComponent<ModalWindowManager>().descriptionText = "정답입니다!"; // Change desc
+
+                }
+                else
+                {
+                    //Debug.Log("입력은" + ans + "정답은:" + p[5] + "같나요?" + p[5] == ans);
+                    ShowResults.GetComponent<ModalWindowManager>().descriptionText = "오답입니다.\n정답은 : " + p[5];
+                    wrongP.Add(new string[] { p[2], (problemNum + 1).ToString() });
+                }
+
+
+            }
+            else
+            {
+                Debug.LogError("뭔가 오류여");
+            }
+
 
             ShowResults.GetComponent<ModalWindowManager>().UpdateUI();
             ShowResults.GetComponent<ModalWindowManager>().Open();
@@ -141,9 +221,42 @@ public class MoveManager : MonoBehaviour
             {
                 InputFildList[1].gameObject.SetActive(false);
             }
+            else if (p[4] == "select1")
+            {
+                InputFildList[2].gameObject.SetActive(false);
+            }
+            else if (p[4] == "selectM")
+            {
+                InputFildList[3].gameObject.SetActive(false);
+            }
             problemNum++;
             SeeProblem();
         }
+    }
+
+    void problemEnd()//문제 다 풀었어요
+    {
+        //page.DoLa
+        page.transform.DOLocalMove(new Vector3(-1080*3, 0, 0), 1.0f).SetEase(Ease.OutBounce);
+        Debug.Log("문제 다 풀었어요");
+        Progress = "결과창";
+        EndPageSet.GetComponent<EndPageSet>().SetEndPage(wrongP);
+
+
+    }
+
+    public void GoTitle()
+    {
+        page.transform.DOLocalMove(new Vector3(-1080 * 4, 0, 0), 2.0f).SetEase(Ease.OutBounce).OnComplete(() => {
+            string currentSceneName = SceneManager.GetActiveScene().name;
+
+            // 장면을 다시 로드
+            SceneManager.LoadScene(currentSceneName);
+        });
+        
+
+         
+        Progress = "";
     }
 
     public void studyStartBtnDwn(int cos)
@@ -207,7 +320,7 @@ public class MoveManager : MonoBehaviour
 
     public static string getRemoveWhiteSpaces(string input)
     {
-        string text=input;
+        string text = input;
         char[] zeroWidthSpaces = { '\u200B', '\u200C', '\u200D' };
 
         foreach (char zeroWidth in zeroWidthSpaces)
