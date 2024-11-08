@@ -6,9 +6,12 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 0
-    path: Assets/SampleScene.unity
+    path: Assets/cs/SampleScene.unity
     guid: 2cda990e2423bbf4892e6590ba056729
-  - enabled: 1
+  - enabled: 0
     path: Assets/Plugins/TEXDraw/Samples/Scenes/TEXDraw-Practice.unity
     guid: e714163ed688a55499e661e7897007e9
+  - enabled: 1
+    path: Assets/Scenes/main.unity
+    guid: 532887e7e9e602b4289b8a9b379fcc8c
   m_configObjects: {}

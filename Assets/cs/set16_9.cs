@@ -8,6 +8,10 @@ public class set16_9 : MonoBehaviour
     {
         SetResolution(); // 초기에 게임 해상도 고정
     }
+    public void OnPreCull()
+    {
+        SetResolution();    
+    }
 
     /* 해상도 설정하는 함수 */
     public void SetResolution()
